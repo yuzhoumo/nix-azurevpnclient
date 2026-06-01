@@ -79,7 +79,7 @@ in stdenv.mkDerivation {
       --prefix LD_LIBRARY_PATH : "$out/opt/microsoft/${pname}/lib"
 
     install -Dm644 usr/share/icons/${pname}.png \
-      $out/share/icons/hicolor/512x512/apps/${pname}.png
+      $out/share/icons/hicolor/64x64/apps/${pname}.png
 
     install -Dm644 /dev/stdin $out/share/applications/${pname}.desktop <<EOF
 [Desktop Entry]
