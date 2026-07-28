@@ -74,7 +74,7 @@ in stdenv.mkDerivation {
     makeWrapper $out/opt/microsoft/${pname}/${pname} \
       $out/bin/azurevpnclient-unprivileged \
       --set GTK_USE_PORTAL 1 \
-      ${lib.optionalString softwareRendering "--set GALLIUM_DRIVER llvmpipe --set LIBGL_ALWAYS_SOFTWARE 1 \\"}
+      ${lib.optionalString softwareRendering "--set GALLIUM_DRIVER llvmpipe --set LIBGL_ALWAYS_SOFTWARE 1"} \
       --prefix PATH : "${lib.makeBinPath (browserShim ++ (with pkgs; [ zenity xdg-utils ]))}" \
       --prefix LD_LIBRARY_PATH : "$out/opt/microsoft/${pname}/lib"
 
